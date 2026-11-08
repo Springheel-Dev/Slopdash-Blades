@@ -33,7 +33,7 @@ An AI-assisted recreation of the original Blades dashboard.
 
 ## What do you need?
 
-- A softmodded Xbox 360 (BadUpdate, ABadAvatar or Peer Pressure)
+- A softmodded Xbox 360 (BadUpdate, ABadAvatar)
 - [SlopDash Importer](importer/README.md): bring your own assets
 
 ## Screenshots
