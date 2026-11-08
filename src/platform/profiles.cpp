@@ -91,6 +91,39 @@ void LoadFromCache(ProfileEntry& p)
 }
 
 // The numbers in a readable profile file (the whole package is read).
+// The profile file as its card numbers (and kept .gpd files) were last read:
+// game:\cache\profiles\<XUID>.stamp, its last write and size. Unchanged, they
+// aren't read again: reading them (the whole package, its .gpd files written
+// to the cache) took most of start-up's 16 s, every blade's card reading every
+// profile (2026-11-08).
+std::string StampText(const WIN32_FIND_DATAA& pf)
+{
+    char s[48];
+    _snprintf_s(s, sizeof(s), _TRUNCATE, "%08X%08X %u", (unsigned)pf.ftLastWriteTime.dwHighDateTime,
+                (unsigned)pf.ftLastWriteTime.dwLowDateTime, (unsigned)pf.nFileSizeLow);
+    return s;
+}
+
+bool CardUpToDate(XUID xuid, const WIN32_FIND_DATAA& pf)
+{
+    std::string base = std::string(kCacheDir) + "\\" + XuidHex(xuid);
+    std::vector<unsigned char> stamp, card;
+    std::string want = StampText(pf);
+    return ReadFileBytes(base + ".stamp", 0, stamp) && stamp.size() == want.size() &&
+           !memcmp(&stamp[0], want.data(), want.size()) && ReadFileBytes(base + ".card", 0, card) && !card.empty();
+}
+
+void KeepStamp(XUID xuid, const WIN32_FIND_DATAA& pf)
+{
+    std::string text = StampText(pf);
+    WriteFileBytes(std::string(kCacheDir) + "\\" + XuidHex(xuid) + ".stamp", text.data(), text.size());
+}
+
+// The last scan stands until a sign-in changes or a profile file changes on
+// disk (ProfilesChangedOnDisk): every blade's card asked for a full scan.
+bool g_profilesScanned = false;
+volatile LONG g_profilesDirty = 0;
+
 void ReadCardNumbers(const std::string& file, ProfileEntry& p)
 {
     std::vector<unsigned char> pkg, gpd;
@@ -369,6 +402,10 @@ std::string GamerPicCache(XUID x)
 
 void ScanProfiles()
 {
+    if (g_profilesScanned && !InterlockedExchange(&g_profilesDirty, 0) && !ProfilesChangedOnDisk())
+        return;                             // (the last scan stands)
+    g_profilesScanned = true;
+    DWORD t0 = GetTickCount();
     g_profiles.clear();
     g_stamps.clear();
     EnumerateProfiles();
@@ -410,8 +447,13 @@ void ScanProfiles()
             std::vector<unsigned char> head;
             bool read = ReadFileBytes(file, library::kStfsHeaderBytes, head) && !head.empty() &&
                         library::ReadProfileHeader(&head[0], head.size(), p.gamertag, p.picture);
-            if (read)
+            bool fresh = read && !CardUpToDate(p.xuid, pf);
+            if (fresh)
+            {
                 ReadCardNumbers(file, p);
+                if (p.gamerscore >= 0)
+                    KeepStamp(p.xuid, pf);
+            }
             if (!read || p.gamerscore < 0)
                 LoadFromCache(p);
             // Xbox Live or not (signin.xex's line 2): the system says so for a
@@ -480,6 +522,7 @@ void ScanProfiles()
     int n = _snprintf_s(count, sizeof(count), _TRUNCATE, "%u", (unsigned)g_profiles.size());
     CreateDirectoryA("game:\\Guide", NULL);
     WriteFileBytes("game:\\Guide\\profiles.txt", count, n > 0 ? (size_t)n : 0);
+    Log("profiles: scanned in %u ms", (unsigned)(GetTickCount() - t0));
 }
 
 bool ProfilesChangedOnDisk()
@@ -706,6 +749,7 @@ void SigninChanged(bool announce)
             now = 0;
         if (now == before[i])
             continue;
+        InterlockedExchange(&g_profilesDirty, 1);       // (the profiles are scanned again)
         if (announce && before[i])
             Toast(kToastSignedOut, i, names[i]);     // the notification adds "signed out"
         names[i].clear();

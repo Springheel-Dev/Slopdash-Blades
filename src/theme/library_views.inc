@@ -1399,6 +1399,17 @@ void ApplyView(HXUIOBJ scene)
     HXUIOBJ list = Descendant(scene, L"listTitles");
     HXUIOBJ panel = Descendant(scene, L"scnTitle");
     HXUIOBJ totals = Descendant(scene, L"lblTotals");
+    // Nothing to show (none found, or the first scan still searching): no
+    // view's rows, covers or panel, only the line that says so; the view is
+    // built when the games come (RefreshLibrary).
+    if (Games().empty())
+    {
+        if (list)
+            XuiElementSetOpacity(list, 0.0f);
+        ShowEmptyLibrary(scene);
+        Log("library view: %s, empty", g_lv.stamp.c_str());
+        return;
+    }
     bool standard = IsListView(g_lv.id);
     if (totals)
         XuiElementSetShow(totals, standard || g_lv.id == "marquee");

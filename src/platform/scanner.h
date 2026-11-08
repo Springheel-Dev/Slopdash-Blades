@@ -10,6 +10,11 @@
 // line per game. Synchronous: it only reads headers.
 void ScanLibrary();
 
+// At start-up: the list as the last scan found it (game:\cache\library.bin),
+// titles and pictures, no drive scanned. The drives are scanned the first time
+// a library opens (SetLibraryScope), in the background, and the list kept again.
+void StartupLibrary();
+
 // A drive plugged in or out (main.cpp): the same scan on a thread of its own,
 // which also stops the fetcher. False if one is already under way.
 bool StartBackgroundScan();

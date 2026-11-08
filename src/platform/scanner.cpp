@@ -509,6 +509,134 @@ bool TileElsewhere(library::Game& g)
     return false;
 }
 
+// --- The library as the last scan found it --------------------------------------------
+// game:\cache\library.bin: the list, icons and all, so start-up shows it at
+// once and scans the drives in the background (the scan took 5-6 s of
+// start-up with 67 games, 2026-11-08). Written after each scan.
+const char kLibraryCache[] = "game:\\cache\\library.bin";
+const unsigned kLibraryMagic = 0x53444C31;     // "SDL1"
+
+void PutU32(std::string& out, unsigned v)
+{
+    out.append((const char*)&v, 4);
+}
+
+void PutBytes(std::string& out, const void* p, size_t n)
+{
+    PutU32(out, (unsigned)n);
+    if (n)
+        out.append((const char*)p, n);
+}
+
+struct CacheReader
+{
+    const unsigned char* p;
+    const unsigned char* end;
+    bool ok;
+    bool U32(unsigned& v)
+    {
+        if (!ok || end - p < 4)
+            return ok = false;
+        memcpy(&v, p, 4);
+        p += 4;
+        return true;
+    }
+    bool Bytes(const unsigned char*& data, unsigned& n)
+    {
+        if (!U32(n) || (size_t)(end - p) < n)
+            return ok = false;
+        data = p;
+        p += n;
+        return true;
+    }
+    void Str(std::string& s)
+    {
+        const unsigned char* d;
+        unsigned n;
+        if (Bytes(d, n))
+            s.assign((const char*)d, n);
+    }
+    void WStr(std::wstring& s)
+    {
+        const unsigned char* d;
+        unsigned n;
+        if (Bytes(d, n) && n % sizeof(wchar_t) == 0)
+            s.assign((const wchar_t*)d, n / sizeof(wchar_t));
+    }
+};
+
+void SaveLibraryCache(const std::vector<library::Game>& games)
+{
+    std::string out;
+    PutU32(out, kLibraryMagic);
+    PutU32(out, (unsigned)games.size());
+    for (size_t i = 0; i < games.size(); i++)
+    {
+        const library::Game& g = games[i];
+        PutU32(out, (unsigned)g.kind);
+        PutU32(out, g.titleId);
+        PutU32(out, g.contentType);
+        PutU32(out, (unsigned)g.place);
+        PutBytes(out, g.name.data(), g.name.size() * sizeof(wchar_t));
+        PutBytes(out, g.publisher.data(), g.publisher.size() * sizeof(wchar_t));
+        PutBytes(out, g.description.data(), g.description.size() * sizeof(wchar_t));
+        PutBytes(out, g.icon.empty() ? NULL : &g.icon[0], g.icon.size());
+        PutBytes(out, g.art.data(), g.art.size());
+        PutBytes(out, g.path.data(), g.path.size());
+    }
+    CreateDirectoryA("game:\\cache", NULL);
+    std::string tmp = std::string(kLibraryCache) + ".new";
+    HANDLE h = CreateFileA(tmp.c_str(), GENERIC_WRITE, 0, NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
+    if (h == INVALID_HANDLE_VALUE)
+        return;
+    DWORD wrote = 0;
+    BOOL ok = WriteFile(h, out.data(), (DWORD)out.size(), &wrote, NULL) && wrote == out.size();
+    CloseHandle(h);
+    if (ok)
+    {
+        DeleteFileA(kLibraryCache);
+        ok = MoveFileA(tmp.c_str(), kLibraryCache);
+    }
+    Log("library: %u games kept in %s (%u bytes)%s", (unsigned)games.size(), kLibraryCache, (unsigned)out.size(),
+        ok ? "" : ": FAILED");
+}
+
+bool LoadLibraryCache(std::vector<library::Game>& games)
+{
+    std::vector<unsigned char> data;
+    if (!ReadHead(kLibraryCache, 0, data) || data.size() < 8)
+        return false;
+    CacheReader r = { &data[0], &data[0] + data.size(), true };
+    unsigned magic = 0, count = 0;
+    if (!r.U32(magic) || magic != kLibraryMagic || !r.U32(count) || count > 100000)
+        return false;
+    std::vector<library::Game> out(count);
+    for (unsigned i = 0; i < count && r.ok; i++)
+    {
+        library::Game& g = out[i];
+        unsigned kind = 0, place = 0;
+        r.U32(kind);
+        r.U32(g.titleId);
+        r.U32(g.contentType);
+        r.U32(place);
+        g.kind = (library::Kind)kind;
+        g.place = (int)place;
+        r.WStr(g.name);
+        r.WStr(g.publisher);
+        r.WStr(g.description);
+        const unsigned char* icon;
+        unsigned n;
+        if (r.Bytes(icon, n))
+            g.icon.assign(icon, icon + n);
+        r.Str(g.art);
+        r.Str(g.path);
+    }
+    if (!r.ok)
+        return false;
+    games.swap(out);
+    return true;
+}
+
 // The drives walked, everything found put in `found`, by name.
 void WalkAll(std::vector<library::Game>& found)
 {
@@ -552,6 +680,7 @@ DWORD WINAPI BackgroundScan(LPVOID)
 {
     std::vector<library::Game> found;
     WalkAll(found);
+    SaveLibraryCache(found);
     g_bgFound.swap(found);
     // The fetcher follows g_all from its own thread: stopped here (it can
     // take a while, a request in flight), started again once the list is
@@ -569,8 +698,24 @@ void ScanLibrary()
 {
     std::vector<library::Game> found;
     WalkAll(found);
+    SaveLibraryCache(found);
     g_all.swap(found);
     ApplyScope();
+}
+
+void StartupLibrary()
+{
+    std::vector<library::Game> found;
+    DWORD t0 = GetTickCount();
+    if (!LoadLibraryCache(found))
+    {
+        Log("library: no list kept yet (%s): the drives are scanned when the library opens", kLibraryCache);
+        return;
+    }
+    g_all.swap(found);
+    ApplyScope();
+    Log("library: %u games as the last scan found them (%u ms)", (unsigned)g_all.size(),
+        (unsigned)(GetTickCount() - t0));
 }
 
 bool StartBackgroundScan()
@@ -584,7 +729,7 @@ bool StartBackgroundScan()
         return false;
     }
     CloseHandle(t);
-    Log("library: drives changed; scanning in the background");
+    Log("library: scanning the drives in the background");
     return true;
 }
 
@@ -607,6 +752,7 @@ bool TakeBackgroundScan(int& added, int& removed)
         added += before.count(*i) ? 0 : 1;
     for (std::set<std::string>::const_iterator i = before.begin(); i != before.end(); ++i)
         removed += after.count(*i) ? 0 : 1;
+    bool first = before.empty();        // (the first scan: every game is "new", no toast)
     g_replacedFrom = g_games.size();
     g_all.swap(g_bgFound);
     g_bgFound.clear();
@@ -615,6 +761,8 @@ bool TakeBackgroundScan(int& added, int& removed)
     InterlockedExchange(&g_libraryReplaced, 1);
     InterlockedExchange(&g_bgScan, 0);
     Log("library: background scan taken: %d new, %d gone", added, removed);
+    if (first)
+        added = 0;
     return true;
 }
 
@@ -668,6 +816,12 @@ std::vector<size_t> RenameGames(const std::vector<std::wstring>& names)
 
 void SetLibraryScope(LibraryScope scope)
 {
+    // The first time a library opens (Game Library, Arcade, Emulators,
+    // Applications): the drives scanned, in the background (the kept list
+    // shows meanwhile), once a start-up. Not at start-up itself.
+    static bool scanned = false;
+    if (!scanned)
+        scanned = StartBackgroundScan() || BackgroundScanBusy();
     if (scope == g_scope)
         return;
     g_scope = scope;

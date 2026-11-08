@@ -691,7 +691,7 @@ void ShowEmptyLibrary(HXUIOBJ scene)
         XuiControlSetText(totals, L"");
     HXUIOBJ line = Ensure(scene, L"rdEmpty", L"XuiLabel", L"XuiLabelCenterJustify", 132, 290, 855, 75);
     if (line)
-        XuiControlSetText(line, kWhy[CurrentLibraryScope()]);
+        XuiControlSetText(line, BackgroundScanBusy() ? L"Searching for games..." : kWhy[CurrentLibraryScope()]);
 }
 
 void ShowSelectedGame(HXUIOBJ scene, int item)
@@ -780,7 +780,7 @@ void RefreshLibrary(HXUIOBJ scene, bool rescan = true, int shown = 0)
     if (after > 0)
         ShowSelectedGame(scene, 0);
     else
-        if (HXUIOBJ t = Descendant(scene, L"lblTotals")) XuiControlSetText(t, L"No games found");
+        ShowEmptyLibrary(scene);                // ("No games found." in place of "Searching...")
     if (g_lv.scene == scene)
         ApplyView(scene);                       // the view shows the new list
 }

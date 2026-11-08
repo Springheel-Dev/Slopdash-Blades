@@ -1356,10 +1356,27 @@ static int MissingTheme(const char* file)
     XLaunchNewImage(XLAUNCH_KEYWORD_DASH, 0);      // (doesn't return)
 }
 
+// Start-up timing, in the log: each step's time and the total so far.
+static DWORD g_bootStart = 0, g_bootLast = 0;
+
+static void BootStep(const char* step)
+{
+    DWORD now = GetTickCount();
+    if (!g_bootStart)
+    {
+        g_bootStart = g_bootLast = now;
+        Log("startup: SlopDash started %u ms after the console", (unsigned)now);
+        return;
+    }
+    Log("startup: %s %u ms (total %u ms)", step, (unsigned)(now - g_bootLast), (unsigned)(now - g_bootStart));
+    g_bootLast = now;
+}
+
 int __cdecl main()
 {
     SetUnhandledExceptionFilter(CrashFilter);
     Log("=== SlopDash 0.0.111 (Blades test) ===");
+    BootStep("start");
     Mount("hdd:", "\\Device\\Harddisk0\\Partition1");
     Mount("flash:", "\\Device\\Flash");
     Mount("sysext:", "\\Device\\Harddisk0\\SystemExtPartition");
@@ -1412,8 +1429,11 @@ int __cdecl main()
     }
     else if (!LoadDashboard(kDashPath, kSharedResPath))
         return 1;
-    ScanLibrary();
+    BootStep("the theme's files");
+    StartupLibrary();
+    BootStep("the library list");
     StartFetcher();
+    BootStep("the fetcher's cache");
 
     // XAudio2 must exist before XUI's sound class plays anything.
     IXAudio2* audio = NULL;
@@ -1471,6 +1491,7 @@ int __cdecl main()
     else
         hr = g_app.Init(TextureLoader, &params);    // XUI creates the device, as in 0.0.5
     Log("XUI init: %08X", (unsigned)hr);
+    BootStep("audio and XUI");
     if (FAILED(hr))
         return 1;
     // XUI's own device presents at once (about 113 frames a second, unsynced):
@@ -1488,6 +1509,7 @@ int __cdecl main()
 
     // Fonts: the dashboard's text uses "ConvectionUI", which is XenonCLatin.xtt
     // on the console's flash; any other font found is only a fallback.
+    BootStep("the video mode");
     Log("looking for fonts:");
     // The theme pack's copy first, straight from memory (the pack stays loaded).
     bool packFont = false;
@@ -1532,6 +1554,7 @@ int __cdecl main()
     else if (!packFont)
         Log("no font found: text won't show");
 
+    BootStep("the font");
     std::wstring base;
     // The Blades theme's colours, the user's (System > Themes > X): into the
     // skins before they load.
@@ -1560,6 +1583,7 @@ int __cdecl main()
         hr = g_app.LoadSkin(skin.c_str(), L"Hud");
         Log("guide skin %S (prefix Hud): %08X", skin.c_str(), (unsigned)hr);
     }
+    BootStep("the skins");
     HXUIOBJ scene = NULL;
     if (PackageLocator(L"dashmain", base))
     {
@@ -1580,6 +1604,7 @@ int __cdecl main()
     {
         g_app.RecordOriginal(scene);
         Log("main scene: %u elements", (unsigned)g_app.m_original.size());
+    BootStep("the main scene");
         if (!g_launch)
             ApplyBladesOptions(g_app.m_root);     // e.g. the Homebrew blade
     }
@@ -1625,6 +1650,7 @@ int __cdecl main()
     }
     Log("switches: own device %d, view scale %d, scene scale %d, boot animation %d, silent sounds %d", kOwnDevice,
         kScaleToScreen, kScaleScene, kPlayBoot, kSilentSounds);
+    BootStep("the rest");
     Log("running");
     g_app.Run();
     g_app.Uninit();
