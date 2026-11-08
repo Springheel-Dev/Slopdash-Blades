@@ -1,0 +1,78 @@
+# Builds "SlopDash Importer.exe" on GitHub's own Windows machine for each release,
+# and attaches it (with its SHA-256) to that release, so the download is built
+# from the public source.
+#
+# The release must already hold SlopDash.xex and SlopGuide.xex (built with the
+# Xbox 360 SDK, which isn't here), and importer/release.txt must pin them.
+# Run it again on an existing release from the Actions tab (Run workflow).
+name: Importer release build
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "The release's tag (e.g. importer-v0.1.0)"
+        required: true
+
+permissions:
+  contents: write        # attach the exe to the release
+  id-token: write        # build provenance (public repository only)
+  attestations: write
+
+jobs:
+  build:
+    runs-on: windows-2022
+    defaults:
+      run:
+        shell: bash
+    env:
+      TAG: ${{ github.event.release.tag_name || inputs.tag }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ env.TAG }}
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      - name: MinGW g++
+        shell: pwsh
+        run: |
+          if (Test-Path C:\mingw64\bin\g++.exe) { "C:\mingw64\bin" >> $env:GITHUB_PATH }
+          elseif (-not (Get-Command g++ -ErrorAction SilentlyContinue)) {
+            choco install mingw -y --no-progress
+            "C:\ProgramData\mingw64\mingw64\bin" >> $env:GITHUB_PATH
+          }
+
+      - name: The release's SlopDash build, checked against release.txt
+        run: |
+          mkdir -p importer/build/ci-release
+          gh release download "$TAG" --repo "$GITHUB_REPOSITORY" \
+            --pattern SlopDash.xex --pattern SlopGuide.xex --dir importer/build/ci-release
+          awk '$1 == "sha256" { print $2 "  " $3 }' importer/release.txt |
+            (cd importer/build/ci-release && sha256sum -c -) ||
+            { echo "::error::the release's .xex files don't match importer/release.txt"; exit 1; }
+
+      - name: Build
+        run: |
+          g++ --version | head -1
+          SKIP_WEB=1 ./importer/build.sh importer/build/ci-release
+
+      - name: Attach to the release
+        run: |
+          cd importer/dist
+          cp "SlopDash Importer.exe" SlopDash.Importer.exe
+          sha256sum SlopDash.Importer.exe > SlopDash.Importer.exe.sha256
+          cat SlopDash.Importer.exe.sha256
+          gh release upload "$TAG" --repo "$GITHUB_REPOSITORY" --clobber \
+            SlopDash.Importer.exe SlopDash.Importer.exe.sha256
+
+      - name: Build provenance
+        if: ${{ !github.event.repository.private }}
+        uses: actions/attest-build-provenance@v2
+        with:
+          subject-path: importer/dist/SlopDash.Importer.exe

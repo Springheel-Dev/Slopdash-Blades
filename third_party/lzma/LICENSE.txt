@@ -1,0 +1,4 @@
+LZMA SDK (7z decoder), by Igor Pavlov: public domain.
+
+Each file's header says so ("Public domain"). The SDK and its notes:
+https://www.7-zip.org/sdk.html

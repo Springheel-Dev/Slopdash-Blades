@@ -1,0 +1,6 @@
+# The SlopDash build the importer carries, for building it without the Xbox 360
+# SDK: build.sh downloads these from the release and checks each SHA-256.
+repo Springheel-Dev/Slopdash-Blades
+tag importer-v0.3.1
+sha256 a800241cb1a1ad78c666ff43fed129a657fc76289d6556be9b3c76bbb6370159  SlopDash.xex
+sha256 4bd56fbafd6304bf9c178da584049525094f388e3be1596b5457855c3ce206c1  SlopGuide.xex

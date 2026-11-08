@@ -1,0 +1,1238 @@
+{
+ "Arcade::CAchievementListCtrl": {
+  "base": "XuiList",
+  "types": []
+ },
+ "Arcade::CCategoryListCtrl": {
+  "base": "XuiList",
+  "types": []
+ },
+ "Arcade::CCategoryScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "Arcade::CCategorySelectorScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "Arcade::CCompareAchievementsScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "Arcade::CDownloadMetaScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "Arcade::CEZPassScene": {
+  "base": "DashScene",
+  "types": []
+ },
+ "Arcade::CFriendImageCtrl": {
+  "base": "XuiControl",
+  "types": []
+ },
+ "Arcade::CFriendsListCtrl": {
+  "base": "XuiList",
+  "types": []
+ },
+ "Arcade::CFriendsMetaScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "Arcade::CFriendsPlayingNowScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "Arcade::CHomepageScene": {
+  "base": "DashScene",
+  "types": []
+ },
+ "Arcade::CLeaderboardListCtrl": {
+  "base": "XuiList",
+  "types": []
+ },
+ "Arcade::CMultiTextNavButton": {
+  "base": "XuiNavButton",
+  "types": []
+ },
+ "Arcade::CMyArcadeMetaScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "Arcade::CRecentGameMetaScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "Arcade::CTellAFriendListCtrl": {
+  "base": "XuiList",
+  "types": []
+ },
+ "Arcade::CTellAFriendScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "Arcade::CTitleAchievementsScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "Arcade::CTitleLaunchScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "Arcade::CTitleLeaderboardScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "Arcade::CTitleListCtrl": {
+  "base": "XuiList",
+  "types": []
+ },
+ "Arcade::CTitleScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "Arcade::CTitleScene::CAchievementScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "Arcade::CTitleScene::CGameScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "Arcade::CTitleScene::CLeaderboardScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "Arcade::CTitleScene::CPresenceScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "Arcade::CTitleSelectorScene": {
+  "base": "DashScene",
+  "types": []
+ },
+ "Arcade::CTwistSelectorScene": {
+  "base": "DashScene",
+  "types": []
+ },
+ "ArcadeTwistFilter": {
+  "base": "XuiControl",
+  "types": []
+ },
+ "ArtistOptionsScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "BaseScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "C2002_NetworkConfigAction": {
+  "base": "DashScene",
+  "types": []
+ },
+ "C2004_MasterTab": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "C2004_NetworkDetails": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "C2005_AdditionalSettings": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "C2010_TestingNetwork": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "C2011_TestingLAN": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "C2012_TestInformation": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "C2013_WindowsConnectNow": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "C2015_WirelessInformation": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "C2016_EditIPSettings": {
+  "base": "DashScene",
+  "types": []
+ },
+ "C2018_IPSettings": {
+  "base": "DashScene",
+  "types": []
+ },
+ "C2020_AvailableWirelessNetworks": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "C2022_WirelessSecuritySettings": {
+  "base": "DashScene",
+  "types": []
+ },
+ "C2024_EnterSettings": {
+  "base": "DashScene",
+  "types": []
+ },
+ "C2026_ChannelList": {
+  "base": "DashScene",
+  "types": []
+ },
+ "C2028_WirelessModes": {
+  "base": "DashScene",
+  "types": []
+ },
+ "C2033_DNSConfig": {
+  "base": "DashScene",
+  "types": []
+ },
+ "C2034_DNSSettings": {
+  "base": "DashScene",
+  "types": []
+ },
+ "C2036_PPPoESettings": {
+  "base": "DashScene",
+  "types": []
+ },
+ "C2038_ConsoleInformation": {
+  "base": "DashScene",
+  "types": []
+ },
+ "C4LineBtn": {
+  "base": "XuiNavButton",
+  "types": []
+ },
+ "CAMHomeScene": {
+  "base": "DashScene",
+  "types": []
+ },
+ "CAMMyMembershipsScene": {
+  "base": "DashScene",
+  "types": []
+ },
+ "CAboutMSPointsListScene": {
+  "base": "DashScene",
+  "types": []
+ },
+ "CAchievementsGridList": {
+  "base": "XuiList",
+  "types": []
+ },
+ "CAchievementsGridScene": {
+  "base": "DashScene",
+  "types": []
+ },
+ "CAchievementsGridTitleList": {
+  "base": "XuiList",
+  "types": []
+ },
+ "CAddressButton": {
+  "base": "XuiButton",
+  "types": []
+ },
+ "CBladeMOTD": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "CChangeLiveIDCongratsScene": {
+  "base": "DashScene",
+  "types": []
+ },
+ "CChangeLiveIDCurrentSignIn": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "CChangeLiveIDFinishScene": {
+  "base": "DashScene",
+  "types": []
+ },
+ "CChangeLiveIDMenuScene": {
+  "base": "DashScene",
+  "types": []
+ },
+ "CChangeLiveIDNewSignIn": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "CChangeLiveIDParentSignIn": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "CConnStatus": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "CContactAddressScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "CDashListChooser": {
+  "base": "XuiCommonList",
+  "types": []
+ },
+ "CFamilyTimerDurationList": {
+  "base": "XuiList",
+  "types": []
+ },
+ "CFamilyTimerSettingsScene": {
+  "base": "DashScene",
+  "types": []
+ },
+ "CFriendRequestIntroScene": {
+  "base": "DashScene",
+  "types": []
+ },
+ "CFriendRequestMainScene": {
+  "base": "DashScene",
+  "types": []
+ },
+ "CFriendRequestRecipientsList": {
+  "base": "XuiCommonList",
+  "types": []
+ },
+ "CGameDetailsScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "CGameShowcaseListList": {
+  "base": "XuiList",
+  "types": []
+ },
+ "CGameShowcaseScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "CGameplaySettingsScene": {
+  "base": "DashScene",
+  "types": []
+ },
+ "CGamerTile": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "CGamesBladeScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "CGamesBladeSignedIn": {
+  "base": "DashScene",
+  "types": []
+ },
+ "CGamesBladeSignedOut": {
+  "base": "DashScene",
+  "types": []
+ },
+ "CI420VideoStreamXuiControl": {
+  "base": "XuiControl",
+  "types": []
+ },
+ "CMarketingTwoOptionsScene": {
+  "base": "DashScene",
+  "types": []
+ },
+ "CMessengerSelectWLIDScene": {
+  "base": "DashScene",
+  "types": []
+ },
+ "CMessengerSignupCompleteScene": {
+  "base": "DashScene",
+  "types": []
+ },
+ "CMessengerWelcomeScene": {
+  "base": "DashScene",
+  "types": []
+ },
+ "CMoreInfoScene": {
+  "base": "DashScene",
+  "types": []
+ },
+ "CMyMembershipsList": {
+  "base": "XuiList",
+  "types": []
+ },
+ "CMyMembershipsScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "CNetworkListItem": {
+  "base": "XuiList",
+  "types": []
+ },
+ "CPCContentSettingsScene": {
+  "base": "DashScene",
+  "types": []
+ },
+ "CPCMainScene": {
+  "base": "DashScene",
+  "types": []
+ },
+ "CPCPrivFriendsScene": {
+  "base": "DashScene",
+  "types": []
+ },
+ "CPalChoice": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "CPassportPasswordButton": {
+  "base": "XuiButton",
+  "types": []
+ },
+ "CPassportPasswordScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "CPassportSignInButton": {
+  "base": "XuiButton",
+  "types": []
+ },
+ "CPassportSignInScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "CPolicyDisplayScene": {
+  "base": "DashScene",
+  "types": []
+ },
+ "CPolicyMainScene": {
+  "base": "DashScene",
+  "types": []
+ },
+ "CPostalDataList": {
+  "base": "XuiList",
+  "types": []
+ },
+ "CPostalDataListScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "CPrivThreeOptionsScene": {
+  "base": "DashScene",
+  "types": []
+ },
+ "CPrivTwoOptionsScene": {
+  "base": "DashScene",
+  "types": []
+ },
+ "CPrivacyMainScene": {
+  "base": "DashScene",
+  "types": []
+ },
+ "CProfileChoice": {
+  "base": "DashScene",
+  "types": []
+ },
+ "CResolutionChoice": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "CSetupComplete": {
+  "base": "DashScene",
+  "types": []
+ },
+ "CStateList": {
+  "base": "XuiList",
+  "types": []
+ },
+ "CStateListScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "CStorageDevice": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "CTestProfileItem": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "CTitleMetaDataScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "CWLIDMenuScene": {
+  "base": "DashScene",
+  "types": []
+ },
+ "CWaitForLogonScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "CWelcomeVideoScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "CXuiEditAutoScroll": {
+  "base": "XuiEdit",
+  "types": []
+ },
+ "CategoriesList": {
+  "base": "XuiCommonList",
+  "types": []
+ },
+ "CategoriesScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "CongratulationsScene": {
+  "base": "DashScene",
+  "types": []
+ },
+ "ConsoleSerialNumEdit": {
+  "base": "XuiNavButton",
+  "types": []
+ },
+ "ContactErrorScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "DVDTrayScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "DashBladeTab": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "DashIPTVSettingsScene": {
+  "base": "DashScene",
+  "types": []
+ },
+ "DashLiveScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "DashLiveSignedIn": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "DashLiveSignedOut": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "DashMPScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "DashMainScene": {
+  "base": "XuiTabScene",
+  "types": []
+ },
+ "DashMediaScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "DashScene": {
+  "base": "XuiScene",
+  "types": [
+   5,
+   5,
+   5
+  ]
+ },
+ "DashSettingsList": {
+  "base": "XuiCommonList",
+  "types": []
+ },
+ "DashSystemScene": {
+  "base": "DashScene",
+  "types": []
+ },
+ "DashVideo": {
+  "base": "XuiElement",
+  "types": []
+ },
+ "DefaultFeaturedTitleBanner": {
+  "base": "XuiFall07BOTDScene",
+  "types": []
+ },
+ "DeleteMusicScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "DeviceDetailsScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "DeviceMainScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "DeviceNotBrowseableScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "DeviceSelectorList": {
+  "base": "XuiList",
+  "types": []
+ },
+ "DeviceSelectorScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "DownloadLiveSignupScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "DvdInfoPane": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "DvdPadDisplay": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "DvdPadPlayback": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "DvdRcDisplay": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "DvrStorageScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "EditBoxButton": {
+  "base": "XuiButton",
+  "types": []
+ },
+ "EditButton": {
+  "base": "XuiButton",
+  "types": []
+ },
+ "EditNowPlayingQueueList": {
+  "base": "XuiList",
+  "types": []
+ },
+ "EditNowPlayingQueueScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "EditTagInfoScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "EnumeratingContentScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "ErrorScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "ExtendedScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "FileViewList": {
+  "base": "XuiList",
+  "types": []
+ },
+ "FileViewScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "FormatHDScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "FriendRequestProgressScene": {
+  "base": "DashScene",
+  "types": []
+ },
+ "FullScreenPhotoScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "GamerCardScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "GamerTileList": {
+  "base": "XuiList",
+  "types": []
+ },
+ "GridList": {
+  "base": "XuiList",
+  "types": []
+ },
+ "HDDVDContentDetailsScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "HDDVDContentsList": {
+  "base": "XuiList",
+  "types": []
+ },
+ "HDDVDContentsScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "HDDVDDeviceScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "ImageRenderControl": {
+  "base": "XuiControl",
+  "types": []
+ },
+ "IptvConnectingScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "ItemDetailsScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "ItemsList": {
+  "base": "XuiList",
+  "types": []
+ },
+ "ItemsScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "LimitedNetworkScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "LiveVisionControl": {
+  "base": "XuiControl",
+  "types": []
+ },
+ "LiveVisionDashEffect": {
+  "base": "XuiControl",
+  "types": []
+ },
+ "MediaBladeMetaIptv": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "MediaBladeSignedInScene": {
+  "base": "DashScene",
+  "types": []
+ },
+ "MediaBladeSignedOutScene": {
+  "base": "DashScene",
+  "types": []
+ },
+ "MediaCenterScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "MediaContainerList": {
+  "base": "XuiList",
+  "types": []
+ },
+ "MediaContainerListScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "MediaContainerOptionsScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "MediaPackage": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "MediaSourceList": {
+  "base": "XuiList",
+  "types": []
+ },
+ "MediaSourceNoComputersMetapanelScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "MediaSourceSelectionScene": {
+  "base": "DashScene",
+  "types": []
+ },
+ "MetaPanelScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "MusicEqualizer": {
+  "base": "XuiLabel",
+  "types": []
+ },
+ "MusicLibraryScene": {
+  "base": "DashScene",
+  "types": []
+ },
+ "MusicPlayPauseButton": {
+  "base": "XuiButton",
+  "types": []
+ },
+ "MusicPlaybackModeButton": {
+  "base": "XuiButton",
+  "types": []
+ },
+ "MusicTransportControlsScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "NetworkDeviceManagementScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "NetworkDeviceMetaPanelScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "NetworkDeviceSelectScene": {
+  "base": "DashScene",
+  "types": []
+ },
+ "NetworkSettingsScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "NoNetworkScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "NowPlayingList": {
+  "base": "XuiList",
+  "types": []
+ },
+ "NowPlayingRipOrEditButton": {
+  "base": "XuiButton",
+  "types": []
+ },
+ "NowPlayingScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "OOBEScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "OldVersionScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "OperationProgressScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "PasswordEditButton": {
+  "base": "XuiButton",
+  "types": []
+ },
+ "PcSoftwareScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "PrivacySettingsList": {
+  "base": "XuiCommonList",
+  "types": []
+ },
+ "ReconfigureWirelessScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "ReputationScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "RipCDProgressList": {
+  "base": "XuiList",
+  "types": []
+ },
+ "RipCDProgressScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "RipCDSelectScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "ScriptData": {
+  "base": "XuiElement",
+  "types": []
+ },
+ "ScriptImage": {
+  "base": "XuiControl",
+  "types": []
+ },
+ "ScriptList": {
+  "base": "XuiList",
+  "types": []
+ },
+ "ScriptScene": {
+  "base": "XuiScene",
+  "types": [
+   5
+  ]
+ },
+ "SlowNetworkScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "SongList": {
+  "base": "XuiList",
+  "types": []
+ },
+ "SongListScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "SongMetadataScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "SongOptionsScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "StatusScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "TransportControlsScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "TraySceneButton": {
+  "base": "XuiButton",
+  "types": []
+ },
+ "TraySceneLoader": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "UninstallIPTVScene": {
+  "base": "DashScene",
+  "types": []
+ },
+ "VideoCategoriesList": {
+  "base": "ScriptList",
+  "types": []
+ },
+ "VideoChatMainScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "VideoContentList": {
+  "base": "ScriptList",
+  "types": []
+ },
+ "VideoContentScene": {
+  "base": "ScriptScene",
+  "types": []
+ },
+ "VideoData": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "VideoFeedZoomControl": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "VideoScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "VideosDetailsTwist": {
+  "base": "XuiControl",
+  "types": []
+ },
+ "VideosTwistFilter": {
+  "base": "XuiControl",
+  "types": []
+ },
+ "VisualizerButton": {
+  "base": "XuiControl",
+  "types": []
+ },
+ "VisualizerScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "WaitingScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "Wallpaper": {
+  "base": "XuiControl",
+  "types": []
+ },
+ "WelcomeScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "Wireless80211bScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "XmfPrebufferingScene": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "XuiBOTDOfflineContainer": {
+  "base": "XuiScene",
+  "types": [
+   3,
+   5
+  ]
+ },
+ "XuiBOTDOfflineScene": {
+  "base": "XuiScene",
+  "types": [
+   5
+  ]
+ },
+ "XuiFall07BOTDScene": {
+  "base": "XuiScene",
+  "types": [
+   3,
+   3,
+   3,
+   3,
+   3,
+   3,
+   5
+  ]
+ },
+ "XuiGamerCard": {
+  "base": "XuiControl",
+  "types": [
+   5,
+   1
+  ]
+ },
+ "XuiHtmlElement": {
+  "base": "XuiElement",
+  "types": [
+   5
+  ]
+ },
+ "XuiHtmlPresenter": {
+  "base": "XuiElement",
+  "types": []
+ },
+ "dashAudioSettings": {
+  "base": "DashScene",
+  "types": []
+ },
+ "dashAudioSettings_D": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "dashAudioSettings_FX": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "dashAutoOff": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "dashBackgroundDownloads": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "dashCCountry": {
+  "base": "XuiList",
+  "types": []
+ },
+ "dashCDate": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "dashCHints": {
+  "base": "XuiList",
+  "types": []
+ },
+ "dashCLanguage": {
+  "base": "XuiList",
+  "types": []
+ },
+ "dashCRatingView": {
+  "base": "XuiList",
+  "types": []
+ },
+ "dashCScreenSize": {
+  "base": "XuiList",
+  "types": []
+ },
+ "dashCTime": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "dashCTimezone": {
+  "base": "XuiList",
+  "types": []
+ },
+ "dashCValueSpin": {
+  "base": "XuiList",
+  "types": []
+ },
+ "dashClockSettings": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "dashClockSettings_1224": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "dashClockSettings_DSaving": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "dashClockSettings_Menu": {
+  "base": "DashScene",
+  "types": []
+ },
+ "dashClockSettings_TZone": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "dashCountrySettings": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "dashLanguageSettings": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "dashLiveVisionSettingsScene": {
+  "base": "DashScene",
+  "types": []
+ },
+ "dashOutputLevels": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "dashPControlSelect": {
+  "base": "DashScene",
+  "types": []
+ },
+ "dashPControlSettingsMenu": {
+  "base": "DashScene",
+  "types": []
+ },
+ "dashPControlSettings_Content": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "dashPControlSettings_Game": {
+  "base": "DashScene",
+  "types": []
+ },
+ "dashPControlSettings_LiveA": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "dashPControlSettings_LiveC": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "dashPControlSettings_Passcode": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "dashPControlSettings_PasscodeHint": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "dashPControlSettings_Video": {
+  "base": "DashScene",
+  "types": []
+ },
+ "dashPControlSettings_VideoExplicit": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "dashPControlSettings_VideoMovie": {
+  "base": "DashScene",
+  "types": []
+ },
+ "dashPControlSettings_VideoTV": {
+  "base": "DashScene",
+  "types": []
+ },
+ "dashPControlSettings_VideoUnrated": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "dashPasscodeEdit": {
+  "base": "XuiButton",
+  "types": []
+ },
+ "dashPasscodeNEdit": {
+  "base": "XuiNavButton",
+  "types": []
+ },
+ "dashRemoteC": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "dashRemoteCList": {
+  "base": "XuiList",
+  "types": []
+ },
+ "dashScreensaver": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "dashSettingsRoot": {
+  "base": "DashScene",
+  "types": []
+ },
+ "dashShutdownSettings": {
+  "base": "DashScene",
+  "types": []
+ },
+ "dashSignOut": {
+  "base": "XuiNavButton",
+  "types": []
+ },
+ "dashStartUp": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "dashSystemReset": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "dashVideoSettings": {
+  "base": "DashScene",
+  "types": []
+ },
+ "dashVideoSettings_60": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "dashVideoSettings_Format": {
+  "base": "DashScene",
+  "types": []
+ },
+ "dashVideoSettings_HD": {
+  "base": "XuiScene",
+  "types": []
+ },
+ "oobeCountry": {
+  "base": "DashScene",
+  "types": []
+ },
+ "oobeLanguage": {
+  "base": "DashScene",
+  "types": []
+ },
+ "oobeProfileCreation": {
+  "base": "XuiScene",
+  "types": []
+ }
+}

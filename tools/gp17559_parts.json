@@ -1,0 +1,649 @@
+{
+ "802_Achievements.xur": {
+  "children": [
+   {
+    "ClassOverride": "CAchievementsGridScene",
+    "Id": "SceneMain",
+    "children": [
+     {
+      "Id": "HeaderShader",
+      "class": "XuiFigure"
+     },
+     {
+      "Id": "labBackground",
+      "class": "XuiLabel"
+     },
+     {
+      "Id": "legend_B",
+      "class": "XuiBackButton"
+     },
+     {
+      "Id": "labAchievementName",
+      "class": "XuiLabel"
+     },
+     {
+      "Id": "labAcquiredDate",
+      "class": "XuiLabel"
+     },
+     {
+      "Id": "labPoints",
+      "class": "XuiLabel"
+     },
+     {
+      "Id": "labAchievementDescription",
+      "class": "XuiLabel"
+     },
+     {
+      "Id": "ctlLoading",
+      "class": "XuiControl"
+     },
+     {
+      "Id": "labEmpty",
+      "class": "XuiLabel"
+     },
+     {
+      "ClassOverride": "CAchievementsGridList",
+      "Id": "AchievementList",
+      "class": "XuiList"
+     },
+     {
+      "Id": "labGameTitle",
+      "class": "XuiLabel"
+     },
+     {
+      "Id": "labCountText",
+      "class": "XuiLabel"
+     },
+     {
+      "Id": "labHeader",
+      "class": "XuiLabel"
+     },
+     {
+      "Id": "legend_X",
+      "class": "XuiButton"
+     }
+    ],
+    "class": "HUDScene"
+   }
+  ],
+  "class": "XuiCanvas"
+ },
+ "804_LoadAchievements.xur": {
+  "children": [
+   {
+    "ClassOverride": "LoadAchievementsScene",
+    "Id": "SceneMain",
+    "children": [
+     {
+      "Id": "legend_B",
+      "class": "XuiBackButton"
+     }
+    ],
+    "class": "HUDScene"
+   }
+  ],
+  "class": "XuiCanvas"
+ },
+ "807_EditGamerTile.xur": {
+  "children": [
+   {
+    "ClassOverride": "EditGamerTileScene",
+    "Id": "editGamerTileScene",
+    "children": [
+     {
+      "Id": "graphic_metapane",
+      "class": "XuiLabel"
+     },
+     {
+      "Id": "GamerCardBackground",
+      "class": "XuiFigure"
+     },
+     {
+      "Id": "gamerCard",
+      "class": "XuiGamerCard"
+     },
+     {
+      "ClassOverride": "MetaPanelScene",
+      "Id": "metaPanelScene",
+      "children": [
+       {
+        "Id": "Text2",
+        "class": "XuiLabel"
+       },
+       {
+        "Id": "Text1",
+        "class": "XuiLabel"
+       }
+      ],
+      "class": "XuiScene"
+     },
+     {
+      "Id": "changeGamerTileButton",
+      "class": "XuiNavButton"
+     },
+     {
+      "Id": "changePersonalTileButton",
+      "class": "XuiNavButton"
+     },
+     {
+      "Id": "downloadTilesButton",
+      "class": "XuiNavButton"
+     },
+     {
+      "Id": "capturePictureButton",
+      "class": "XuiNavButton"
+     },
+     {
+      "Id": "backButton",
+      "class": "XuiBackButton"
+     },
+     {
+      "Id": "labHeader",
+      "class": "XuiLabel"
+     }
+    ],
+    "class": "HUDScene"
+   }
+  ],
+  "class": "XuiCanvas"
+ },
+ "808_editProfile.xur": {
+  "children": [
+   {
+    "ClassOverride": "EditProfileScene",
+    "Id": "Scene_Main",
+    "children": [
+     {
+      "Id": "graphic_metapane",
+      "class": "XuiLabel"
+     },
+     {
+      "Id": "GamerCardBackground",
+      "class": "XuiFigure"
+     },
+     {
+      "Id": "gamerCard",
+      "class": "XuiGamerCard"
+     },
+     {
+      "Id": "scnBox_motto",
+      "class": "XuiScene"
+     },
+     {
+      "Id": "labMotto",
+      "class": "XuiLabel"
+     },
+     {
+      "Id": "onlinePersonalCardGroup",
+      "children": [
+       {
+        "class": "XuiFigure"
+       },
+       {
+        "Id": "scnBox",
+        "class": "XuiScene"
+       },
+       {
+        "ClassOverride": "CXuiEditAutoScroll",
+        "Id": "labBio",
+        "class": "XuiEdit"
+       },
+       {
+        "Id": "labLocation",
+        "class": "XuiLabel"
+       },
+       {
+        "Id": "labName",
+        "class": "XuiLabel"
+       }
+      ],
+      "class": "XuiScene"
+     },
+     {
+      "Id": "onlineButtonGroup",
+      "children": [
+       {
+        "Id": "gamerTagButton",
+        "class": "XuiButton"
+       },
+       {
+        "Id": "gamerTileButton",
+        "class": "XuiButton"
+       },
+       {
+        "Id": "gamerZoneButton",
+        "class": "XuiButton"
+       },
+       {
+        "Id": "gamerMottoButton",
+        "class": "XuiButton"
+       },
+       {
+        "Id": "avatarEditorButton",
+        "class": "XuiButton"
+       },
+       {
+        "Id": "gamerNameButton",
+        "class": "XuiButton"
+       },
+       {
+        "Id": "gamerLocationButton",
+        "class": "XuiButton"
+       },
+       {
+        "Id": "gamerBioButton",
+        "class": "XuiButton"
+       }
+      ],
+      "class": "XuiScene"
+     },
+     {
+      "Id": "onlineDatacenterButtonGroup",
+      "children": [
+       {
+        "Id": "gamerTileButton",
+        "class": "XuiButton"
+       },
+       {
+        "Id": "gamerZoneButton",
+        "class": "XuiButton"
+       },
+       {
+        "Id": "gamerMottoButton",
+        "class": "XuiButton"
+       },
+       {
+        "Id": "gamerNameButton",
+        "class": "XuiButton"
+       },
+       {
+        "Id": "gamerLocationButton",
+        "class": "XuiButton"
+       },
+       {
+        "Id": "gamerBioButton",
+        "class": "XuiButton"
+       }
+      ],
+      "class": "XuiScene"
+     },
+     {
+      "Id": "offlineButtonGroup",
+      "children": [
+       {
+        "Id": "gamerTileButton",
+        "class": "XuiButton"
+       },
+       {
+        "Id": "profileNameButton",
+        "class": "XuiButton"
+       },
+       {
+        "Id": "avatarEditorButton",
+        "class": "XuiButton"
+       }
+      ],
+      "class": "XuiScene"
+     },
+     {
+      "Id": "waitCursorControl",
+      "class": "XuiControl"
+     },
+     {
+      "Id": "backButton",
+      "class": "XuiBackButton"
+     },
+     {
+      "Id": "txt_Header",
+      "class": "XuiLabel"
+     }
+    ],
+    "class": "HUDScene"
+   }
+  ],
+  "class": "XuiCanvas"
+ },
+ "809_ChangeGamerTile.xur": {
+  "children": [
+   {
+    "ClassOverride": "ChangeGamerTileScene",
+    "Id": "Scene_Main",
+    "children": [
+     {
+      "Id": "graphic_metapane",
+      "class": "XuiLabel"
+     },
+     {
+      "Id": "GamerCardBackground",
+      "class": "XuiFigure"
+     },
+     {
+      "Id": "gamerCard",
+      "class": "XuiGamerCard"
+     },
+     {
+      "ClassOverride": "GamerTileList",
+      "Id": "gamerTileList",
+      "class": "XuiList"
+     },
+     {
+      "Id": "backButton",
+      "class": "XuiBackButton"
+     },
+     {
+      "Id": "waitCursorControl",
+      "class": "XuiControl"
+     },
+     {
+      "Id": "txt_Header",
+      "class": "XuiLabel"
+     }
+    ],
+    "class": "HUDScene"
+   }
+  ],
+  "class": "XuiCanvas"
+ },
+ "820_GameShowcaseMe.xur": {
+  "children": [
+   {
+    "ClassOverride": "GameShowcaseMeScene",
+    "Id": "mainScene",
+    "children": [
+     {
+      "ClassOverride": "MeGameList",
+      "Id": "gameList",
+      "class": "XuiList"
+     },
+     {
+      "Id": "backButton",
+      "class": "XuiBackButton"
+     },
+     {
+      "Id": "noGamesText",
+      "class": "XuiLabel"
+     },
+     {
+      "Id": "xButton",
+      "class": "XuiNavButton"
+     },
+     {
+      "Id": "yButton",
+      "class": "XuiNavButton"
+     },
+     {
+      "Id": "waitCursorControl",
+      "class": "XuiControl"
+     },
+     {
+      "Id": "headerText",
+      "class": "XuiLabel"
+     }
+    ],
+    "class": "HUDScene"
+   }
+  ],
+  "class": "XuiCanvas"
+ },
+ "828_AchievDetails.xur": {
+  "children": [
+   {
+    "ClassOverride": "AchievementDetailsScene",
+    "Id": "mainScene",
+    "children": [
+     {
+      "Id": "HeaderBackground",
+      "class": "XuiFigure"
+     },
+     {
+      "Id": "achievementDescriptionText",
+      "class": "XuiLabel"
+     },
+     {
+      "Id": "labDescriptionTitle",
+      "class": "XuiLabel"
+     },
+     {
+      "Id": "achievementImage",
+      "class": "XuiImagePresenter"
+     },
+     {
+      "Id": "credText",
+      "class": "XuiLabel"
+     },
+     {
+      "Id": "achievementTitleText",
+      "class": "XuiLabel"
+     },
+     {
+      "Id": "backButton",
+      "class": "XuiBackButton"
+     },
+     {
+      "Id": "headerText",
+      "class": "XuiLabel"
+     },
+     {
+      "Id": "shareButton",
+      "class": "XuiButton"
+     }
+    ],
+    "class": "HUDScene"
+   }
+  ],
+  "class": "XuiCanvas"
+ },
+ "GamerCardScene.xur": {
+  "children": [
+   {
+    "ClassOverride": "GamerCardUIScene",
+    "Id": "gamerCardScene",
+    "children": [
+     {
+      "Id": "graphic_metapane",
+      "class": "XuiLabel"
+     },
+     {
+      "Id": "GamerCardBackground",
+      "class": "XuiFigure"
+     },
+     {
+      "Id": "backButton",
+      "class": "XuiBackButton"
+     },
+     {
+      "Id": "gamerCard",
+      "class": "XuiGamerCard"
+     },
+     {
+      "Id": "meOfflineButtonGroup",
+      "children": [
+       {
+        "Id": "viewGamesButton",
+        "class": "XuiButton"
+       },
+       {
+        "Id": "editProfileButton",
+        "class": "XuiButton"
+       },
+       {
+        "Id": "gamerPreferencesButton",
+        "class": "XuiButton"
+       },
+       {
+        "Id": "signInPreferencesButton",
+        "class": "XuiButton"
+       },
+       {
+        "Id": "addLiveButton",
+        "class": "XuiButton"
+       },
+       {
+        "Id": "fitnessButton",
+        "class": "XuiButton"
+       }
+      ],
+      "class": "XuiScene"
+     },
+     {
+      "Id": "meOnlineButtonGroup",
+      "children": [
+       {
+        "Id": "viewGamesButton",
+        "class": "XuiButton"
+       },
+       {
+        "Id": "editProfileButton",
+        "class": "XuiButton"
+       },
+       {
+        "Id": "viewReputationButton",
+        "class": "XuiButton"
+       },
+       {
+        "Id": "gamerPreferencesButton",
+        "class": "XuiButton"
+       },
+       {
+        "Id": "signInPreferencesButton",
+        "class": "XuiButton"
+       },
+       {
+        "Id": "accountSecurityButton",
+        "class": "XuiButton"
+       },
+       {
+        "Id": "fitnessButton",
+        "class": "XuiButton"
+       }
+      ],
+      "class": "XuiScene"
+     },
+     {
+      "Id": "onlineTextGroup",
+      "children": [
+       {
+        "ClassOverride": "CXuiEditAutoScroll",
+        "Id": "labBio",
+        "class": "XuiEdit"
+       },
+       {
+        "Id": "scnBox",
+        "class": "XuiScene"
+       },
+       {
+        "Id": "labLocation",
+        "class": "XuiLabel"
+       },
+       {
+        "Id": "labName",
+        "class": "XuiLabel"
+       },
+       {
+        "Id": "scnBox_motto",
+        "class": "XuiScene"
+       },
+       {
+        "Id": "labMotto",
+        "class": "XuiLabel"
+       }
+      ],
+      "class": "XuiScene"
+     },
+     {
+      "Id": "headerText",
+      "class": "XuiLabel"
+     }
+    ],
+    "class": "HUDScene"
+   }
+  ],
+  "class": "XuiCanvas"
+ },
+ "GamerZoneInfo.xur": {
+  "children": [
+   {
+    "Id": "Scene_Main",
+    "children": [
+     {
+      "Id": "txt_Header",
+      "class": "XuiLabel"
+     },
+     {
+      "Id": "txt_GamerZoneInfo",
+      "class": "XuiEdit"
+     },
+     {
+      "Id": "backButton",
+      "class": "XuiBackButton"
+     }
+    ],
+    "class": "HUDScene"
+   }
+  ],
+  "class": "XuiCanvas"
+ },
+ "SelectGamerzone.xur": {
+  "children": [
+   {
+    "ClassOverride": "SelectGamerZoneScene",
+    "Id": "selectGamerZoneScene",
+    "children": [
+     {
+      "Id": "graphic_metapane",
+      "class": "XuiLabel"
+     },
+     {
+      "Id": "GamerCardBackground",
+      "class": "XuiFigure"
+     },
+     {
+      "Id": "gamerCard",
+      "class": "XuiGamerCard"
+     },
+     {
+      "ClassOverride": "MetaPanelScene",
+      "Id": "metaPanelScene",
+      "children": [
+       {
+        "Id": "Text2",
+        "class": "XuiLabel"
+       },
+       {
+        "Id": "Text1",
+        "class": "XuiLabel"
+       }
+      ],
+      "class": "XuiScene"
+     },
+     {
+      "Id": "mp_bg",
+      "class": "XuiControl"
+     },
+     {
+      "Id": "zoneList",
+      "class": "XuiCommonList"
+     },
+     {
+      "Id": "txt_message",
+      "class": "XuiLabel"
+     },
+     {
+      "Id": "yButton",
+      "class": "XuiNavButton"
+     },
+     {
+      "Id": "backButton",
+      "class": "XuiBackButton"
+     },
+     {
+      "Id": "txt_header",
+      "class": "XuiLabel"
+     }
+    ],
+    "class": "HUDScene"
+   }
+  ],
+  "class": "XuiCanvas"
+ }
+}

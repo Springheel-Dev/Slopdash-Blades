@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!-- imagexex config for SlopGuide.xex: a DashLaunch system DLL plugin.
+     baseaddr: must be within a bl's reach (32 MB) of xam's code at 0x816CEA2C,
+     so it sits just above xam (0x815F0000-0x81C00000), clear of
+     WirelessInput360 (0x81C00000). To be checked against the console's module
+     list before the first test. -->
+<xex>
+  <baseaddr addr="0x81E80000" />
+  <sysdll />
+  <format>
+    <compressed />
+  </format>
+  <mediatypes>
+    <allpackages />
+  </mediatypes>
+  <gameregion>
+    <all />
+  </gameregion>
+  <version major="0" minor="15" build="0" qfe="0" />
+</xex>

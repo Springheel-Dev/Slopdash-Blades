@@ -1,0 +1,13 @@
+# The SlopDash Importer's build, pinned (Python 3.13.3, 64-bit, Windows).
+# Running it from source needs only cryptography (the XEX decryption in
+# tools/xexres.py); PyInstaller makes the portable exe.
+cryptography==50.0.2
+pyinstaller==6.22.3
+pyinstaller-hooks-contrib==2026.9
+altgraph==0.17.5
+cffi==2.1.1
+packaging==26.3
+pefile==2024.8.26
+pycparser==3.12
+pywin32-ctypes==0.2.3
+setuptools==84.2.1

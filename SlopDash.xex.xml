@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!-- imagexex config for SlopDash.xex: an ordinary title (a dashboard is just a
+     title that DashLaunch starts as its Default). The 0xFFFF prefix marks a
+     homebrew title ID; this one is a placeholder until the project is named. -->
+<xex>
+  <titleid id="0xFFFF07D1"/>
+  <!-- XEX_PRIVILEGE_NO_FORCE_REBOOT (bit 0): xam doesn't exit the title when
+       the disc tray opens. Without it, Open Tray restarted SlopDash: 1888's
+       xam asks XexCheckExecutablePrivilege(0) at launch (818C2450) and its tray
+       handler exits the title on opening unless it's set (818C2C54). -->
+  <privilege id="0"/>
+  <format>
+    <compressed />
+  </format>
+  <mediatypes>
+    <allpackages />
+  </mediatypes>
+  <gameregion>
+    <all />
+  </gameregion>
+  <version major="0" minor="0" build="80" qfe="0" />
+</xex>

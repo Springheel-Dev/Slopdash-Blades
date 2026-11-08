@@ -1,0 +1,394 @@
+class XuiElement
+
+  0	Id	type=5	flags=0	extra=0
+
+  1	Width	type=4	flags=0	extra=0
+
+  2	Height	type=4	flags=0	extra=0
+
+  3	Position	type=7	flags=0	extra=0
+
+  4	Scale	type=7	flags=0	extra=0
+
+  5	Rotation	type=8	flags=0	extra=0
+
+  6	Opacity	type=4	flags=0	extra=0
+
+  7	Anchor	type=3	flags=0	extra=0
+
+  8	Pivot	type=7	flags=0	extra=0
+
+  9	Show	type=1	flags=0	extra=1
+
+  10	BlendMode	type=3	flags=0	extra=0
+
+  11	DisableTimelineRecursion	type=1	flags=0	extra=128
+
+  12	DesignTime	type=1	flags=0x8	extra=64
+
+  13	ColorWriteFlags	type=3	flags=0	extra=0
+
+  14	ClipChildren	type=1	flags=0	extra=4096
+
+  15	EnableEffects	type=1	flags=0	extra=16384
+
+  16	DisableFocusRecursion	type=1	flags=0	extra=65536
+
+  5000	GripTarget	type=1	flags=0x0	extra=0
+  5001	Hittable	type=1	flags=0x0	extra=0
+  5002	LayoutLineBreak	type=1	flags=0x0	extra=0
+  5003	LayoutFloat	type=1	flags=0x0	extra=0
+  5004	Column	type=3	flags=0x0	extra=0
+  5005	Row	type=3	flags=0x0	extra=0
+  5006	ColumnSpan	type=3	flags=0x0	extra=0
+  5007	RowSpan	type=3	flags=0x0	extra=0
+  5008	ColorFactor	type=6	flags=0x0	extra=0
+  5009	CenterPivot	type=1	flags=0x0	extra=0
+class XuiCanvas : XuiElement
+
+class XuiControl : XuiElement
+
+  21	ClassOverride	type=5	flags=0x8	extra=0
+
+  22	Visual	type=5	flags=0	extra=0
+
+  23	Enabled	type=1	flags=0	extra=1
+
+  24	UnfocusedInput	type=1	flags=0	extra=2
+
+  25	NavLeft	type=5	flags=0	extra=0
+
+  26	NavRight	type=5	flags=0	extra=0
+
+  27	NavUp	type=5	flags=0	extra=0
+
+  28	NavDown	type=5	flags=0	extra=0
+
+  29	NavTabForward	type=5	flags=0	extra=0
+
+  30	NavTabBackward	type=5	flags=0	extra=0
+
+  31	Text	type=5	flags=0x4	extra=0
+
+  32	PointSize	type=4	flags=0x6	extra=0
+
+  33	ImagePath	type=5	flags=0x10	extra=0
+
+  5010	HasContextMenu	type=1	flags=0x0	extra=0
+  5011	SizeToText	type=1	flags=0x0	extra=0
+  5012	UseNuiAsMouse	type=1	flags=0x0	extra=0
+  5013	AutoId	type=5	flags=0x0	extra=0
+  5014	HoverSelectTimer	type=4	flags=0x0	extra=0
+  5015	QuickInput	type=1	flags=0x0	extra=0
+class XuiScene : XuiControl : XuiElement
+
+  34	DefaultFocus	type=5	flags=0x8	extra=0
+
+  35	TransFrom	type=5	flags=0	extra=0
+
+  36	TransTo	type=5	flags=0	extra=0
+
+  37	TransBackFrom	type=5	flags=0	extra=0
+
+  38	TransBackTo	type=5	flags=0	extra=0
+
+  39	InterruptTransitions	type=3	flags=0x8	extra=0
+
+  40	IgnorePresses	type=1	flags=0	extra=16
+
+  5016	RecurseTransitions	type=1	flags=0x0	extra=0
+class XuiTabScene : XuiScene : XuiControl : XuiElement
+
+  104	TabCount	type=3	flags=0	extra=0
+
+  105	Wrap	type=1	flags=0	extra=1
+
+  106	UserInterrupt	type=1	flags=0	extra=2
+
+  107	VerticalTabs	type=1	flags=0	extra=16
+
+  108	NoAutoHide	type=1	flags=0	extra=32
+
+  109	DefaultTab	type=3	flags=0	extra=0
+
+class XuiFigure : XuiElement
+
+  17	Stroke	type=9	flags=0x2	extra=0
+
+    0	StrokeWidth	type=4	flags=0	extra=0
+
+    1	StrokeColor	type=6	flags=0	extra=0
+
+  18	Fill	type=9	flags=0	extra=0
+
+    0	FillType	type=3	flags=0x2	extra=0
+
+    1	FillColor	type=6	flags=0x2	extra=0
+
+    2	TextureFileName	type=5	flags=0x2	extra=0
+
+    3	Gradient	type=9	flags=0x2	extra=0
+
+      0	Radial	type=1	flags=0	extra=1
+
+      1	NumStops	type=2	flags=0xa	extra=0
+
+      2	StopColor	type=6	flags=0x1	extra=0
+
+      3	StopPos	type=4	flags=0x1	extra=0
+
+    4	Translation	type=7	flags=0	extra=0
+
+    5	Scale	type=7	flags=0	extra=0
+
+    6	Rotation	type=4	flags=0	extra=0
+
+    7	WrapX	type=3	flags=0	extra=0
+
+    8	WrapY	type=3	flags=0	extra=0
+
+    9	BrushFlags	type=3	flags=0	extra=0
+
+    10	TransformVersion	type=3	flags=0xa	extra=0
+
+  19	Closed	type=1	flags=0x2	extra=2
+
+  20	Points	type=10	flags=0x2	extra=0	custom
+
+class XuiImage : XuiElement
+
+  101	SizeMode	type=3	flags=0	extra=0
+
+  102	ImagePath	type=5	flags=0x10	extra=0
+
+  103	BrushFlags	type=3	flags=0	extra=0
+
+  5017	TextureSurfaceElement	type=5	flags=0x0	extra=0
+  5018	LoadType	type=3	flags=0x0	extra=0
+class XuiGroup : XuiElement
+
+class XuiText : XuiElement
+
+  48	Text	type=5	flags=0x4	extra=0
+
+  49	TextColor	type=6	flags=0	extra=0
+
+  50	DropShadowColor	type=6	flags=0	extra=0
+
+  51	PointSize	type=4	flags=0xc	extra=0
+
+  52	Font	type=5	flags=0	extra=0
+
+  53	TextStyle	type=3	flags=0x8	extra=0
+
+  54	LineSpacingAdjust	type=2	flags=0	extra=0
+
+  5019	TextScale	type=4	flags=0x0	extra=0
+class XuiLabel : XuiControl : XuiElement
+
+class XuiButton : XuiControl : XuiElement
+
+  41	PressKey	type=3	flags=0	extra=0
+
+  5020	PressAnimObject	type=5	flags=0x0	extra=0
+  5021	PressAnimStartFrame	type=5	flags=0x0	extra=0
+  5022	PressAnimEndFrame	type=5	flags=0x0	extra=0
+  5023	FocusAnimObject	type=5	flags=0x0	extra=0
+  5024	FocusAnimStartFrame	type=5	flags=0x0	extra=0
+  5025	FocusAnimEndFrame	type=5	flags=0x0	extra=0
+class XuiNavButton : XuiButton : XuiControl : XuiElement
+
+  42	PressPath	type=5	flags=0x10	extra=0
+
+  43	StayVisible	type=1	flags=0	extra=1
+
+  44	SrcTransIndex	type=3	flags=0	extra=0
+
+  45	DestTransIndex	type=3	flags=0	extra=0
+
+class XuiBackButton : XuiButton : XuiControl : XuiElement
+
+class XuiSound : XuiElement
+
+  62	State	type=3	flags=0	extra=0
+
+  63	Loop	type=1	flags=0x8	extra=4
+
+  64	Finish	type=1	flags=0x8	extra=8
+
+  65	Volume	type=4	flags=0	extra=0
+
+class XuiSoundXAudio : XuiSound : XuiElement
+
+  138	File	type=5	flags=0x10	extra=0
+
+class XuiSoundXACT: not registered
+
+class XuiList : XuiControl : XuiElement
+
+  78	Wrap	type=1	flags=0	extra=1
+
+  5026	WrapBump	type=1	flags=0x0	extra=0
+class XuiCommonList : XuiList : XuiControl : XuiElement
+
+  79	ItemsText	type=5	flags=0x4	extra=0
+
+  80	ItemsImage	type=5	flags=0	extra=0
+
+  81	ItemsNavPath	type=5	flags=0	extra=0
+
+class XuiListItem : XuiCheckbox : XuiControl : XuiElement
+
+  66	Layout	type=3	flags=0	extra=0
+
+  67	Checkable	type=1	flags=0	extra=2
+
+  68	SelectedSize	type=7	flags=0	extra=0
+
+  69	KeepSizeUnfocused	type=1	flags=0	extra=4
+
+  70	InterItemSpacing	type=7	flags=0	extra=0
+
+  71	SmoothScroll	type=1	flags=0	extra=8
+
+  72	SmoothScrollBaseSpeed	type=4	flags=0	extra=0
+
+  73	SmoothScrollMaxSpeed	type=4	flags=0	extra=0
+
+  74	SmoothScrollAcceleration	type=4	flags=0	extra=0
+
+class XuiImagePresenter : XuiElement
+
+  98	SizeMode	type=3	flags=0	extra=0
+
+  99	DataAssociation	type=3	flags=0	extra=0
+
+  100	BrushFlags	type=3	flags=0	extra=0
+
+  5027	LoadType	type=3	flags=0x0	extra=0
+class XuiTextPresenter : XuiElement
+
+  55	TextColor	type=6	flags=0	extra=0
+
+  56	DropShadowColor	type=6	flags=0	extra=0
+
+  57	PointSize	type=4	flags=0xc	extra=0
+
+  58	Font	type=5	flags=0	extra=0
+
+  59	TextStyle	type=3	flags=0x8	extra=0
+
+  60	LineSpacingAdjust	type=2	flags=0	extra=0
+
+  61	DataAssociation	type=3	flags=0	extra=0
+
+  5028	TextScale	type=4	flags=0x0	extra=0
+class XuiVisual : XuiElement
+
+class XuiEdit : XuiControl : XuiElement
+
+  92	TextLimit	type=3	flags=0	extra=0
+
+  93	AllowedChars	type=5	flags=0x4	extra=0
+
+  94	PasswordChar	type=5	flags=0	extra=0
+
+  95	ReadOnly	type=1	flags=0	extra=1
+
+  96	Multiline	type=1	flags=0	extra=2
+
+  97	SmoothScroll	type=1	flags=0	extra=4
+
+class XuiMultilineEdit: not registered
+
+class XuiProgressBar : XuiControl : XuiElement
+
+  82	RangeMin	type=2	flags=0x8	extra=0
+
+  83	RangeMax	type=2	flags=0x8	extra=0
+
+  84	Value	type=2	flags=0	extra=0
+
+class XuiRadioGroup : XuiControl : XuiElement
+
+class XuiRadioButton : XuiControl : XuiElement
+
+  47	PressKey	type=3	flags=0	extra=0
+
+  5029	PressAnimObject	type=5	flags=0x0	extra=0
+  5030	PressAnimStartFrame	type=5	flags=0x0	extra=0
+  5031	PressAnimEndFrame	type=5	flags=0x0	extra=0
+  5032	FocusAnimObject	type=5	flags=0x0	extra=0
+  5033	FocusAnimStartFrame	type=5	flags=0x0	extra=0
+  5034	FocusAnimEndFrame	type=5	flags=0x0	extra=0
+class XuiSlider : XuiControl : XuiElement
+
+  85	RangeMin	type=2	flags=0x8	extra=0
+
+  86	RangeMax	type=2	flags=0x8	extra=0
+
+  87	Value	type=2	flags=0	extra=0
+
+  88	Step	type=2	flags=0	extra=0
+
+  89	Vertical	type=1	flags=0	extra=0
+
+  90	AccelInc	type=2	flags=0	extra=0
+
+  91	AccelTime	type=3	flags=0	extra=0
+
+class XuiScrollEnd : XuiControl : XuiElement
+
+  75	Direction	type=3	flags=0	extra=0
+
+class XuiHtmlPresenter: not registered
+
+class XuiHtmlElement: not registered
+
+class XuiHtmlControl: not registered
+
+class XuiCheckbox : XuiControl : XuiElement
+
+  46	PressKey	type=3	flags=0	extra=0
+
+  5035	PressAnimObject	type=5	flags=0x0	extra=0
+  5036	PressAnimStartFrame	type=5	flags=0x0	extra=0
+  5037	PressAnimEndFrame	type=5	flags=0x0	extra=0
+  5038	FocusAnimObject	type=5	flags=0x0	extra=0
+  5039	FocusAnimStartFrame	type=5	flags=0x0	extra=0
+  5040	FocusAnimEndFrame	type=5	flags=0x0	extra=0
+class XuiCaret : XuiControl : XuiElement
+
+class XuiScrollBar : XuiControl : XuiElement
+
+  76	Direction	type=3	flags=0	extra=0
+
+  77	MinThumbSize	type=3	flags=0	extra=0
+
+class XuiComboBox : XuiControl : XuiElement
+
+  116	ComboBoxStyle	type=3	flags=0x8	extra=0
+
+  117	MaxVisibleVertItems	type=3	flags=0	extra=0
+
+class XuiVideo: not registered
+
+class XuiMessageBoxButton: not registered
+
+class XuiGamerCard: not registered
+
+class XuiPanel: not registered
+
+class XuiListChooser: not registered
+
+class XuiNineGrid : XuiElement
+  110	TextureFileName	type=5	flags=0x8	extra=0
+  111	LeftOffset	type=3	flags=0x8	extra=0
+  112	TopOffset	type=3	flags=0x8	extra=0
+  113	RightOffset	type=3	flags=0x8	extra=0
+  114	BottomOffset	type=3	flags=0x8	extra=0
+  115	NoCenter	type=1	flags=0x8	extra=0
+class XuiGridPanel : XuiElement
+  6000	Columns	type=5	flags=0	extra=0
+  6001	Rows	type=5	flags=0	extra=0
+  6002	CellSpacing	type=4	flags=0	extra=0

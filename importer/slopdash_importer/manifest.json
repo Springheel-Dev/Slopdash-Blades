@@ -1,0 +1,386 @@
+{
+ "sets": {
+  "1888": "Xbox 360 dashboard 2.0.1888 (2005)",
+  "6717": "Xbox 360 dashboard 2.0.6717 (2006)"
+ },
+ "files": [
+  {
+   "set": "1888",
+   "name": "dash.xex",
+   "need": "required",
+   "for": "The dashboard: the blades, their screens and skin",
+   "size": 2588672,
+   "sha1": [
+    "b8f9644a54b23ea4533e01055ac8c57716f43c06"
+   ],
+   "original": {
+    "size": 2596864,
+    "sha1": [
+     "9b5afb18af7ec66595723fe9d45a2d4da05ac0ed"
+    ]
+   },
+   "image": {
+    "size": 8343552,
+    "sha1": [
+     "a954a6d1c5c75a81eed3c18ddad07465982eefe1"
+    ]
+   }
+  },
+  {
+   "set": "1888",
+   "name": "xam.xex",
+   "need": "required",
+   "for": "Gamer cards, notifications, shared pictures; the Guide's frame",
+   "size": 1222656,
+   "sha1": [
+    "b27f2ceab83257bf066adac1f2a81d867aaef648"
+   ],
+   "original": {
+    "size": 1220608,
+    "sha1": [
+     "4ed49e3fcb00611b8f28c17c4c6873c9f7659c38"
+    ]
+   },
+   "image": {
+    "size": 3211264,
+    "sha1": [
+     "776e5c02d45823f1c19ac39446c593464cbccfad"
+    ]
+   }
+  },
+  {
+   "set": "1888",
+   "name": "hud.xex",
+   "need": "required",
+   "for": "The Guide's screens",
+   "size": 124928,
+   "sha1": [
+    "25fd1be4c8effb89eb7312adddc16010e3768e04"
+   ],
+   "original": {
+    "size": 126976,
+    "sha1": [
+     "1eb738ca1043ba12e228c9c40edc92fd1e4c9c8b"
+    ]
+   },
+   "image": {
+    "size": 262144,
+    "sha1": [
+     "db11c2ffe44dce0a6aedd032ca98d76f4084d2bd"
+    ]
+   }
+  },
+  {
+   "set": "1888",
+   "name": "huduiskin.xex",
+   "need": "required",
+   "for": "The Guide's skin",
+   "size": 77824,
+   "sha1": [
+    "25f7415f437dd3c8a385f3aae4b47638e84f3bcc"
+   ],
+   "original": {
+    "size": 77824,
+    "sha1": [
+     "7e4eb674ed4662c332a963e4247dfc4bfb8c9c63"
+    ]
+   },
+   "image": {
+    "size": 212992,
+    "sha1": [
+     "bf4bea07f49c8cfa5c1bc40a5ed66e7e0db6dfdc"
+    ]
+   }
+  },
+  {
+   "set": "1888",
+   "name": "signin.xex",
+   "need": "required",
+   "for": "Sign In",
+   "size": 47104,
+   "sha1": [
+    "aa439ac3b5ebcec3a346757a8bfd592bd3e4bb1d"
+   ],
+   "original": {
+    "size": 49152,
+    "sha1": [
+     "45e3a0b270da0421e9f892e69a6cd17f45da2344"
+    ]
+   },
+   "image": {
+    "size": 143360,
+    "sha1": [
+     "5bd377f059bca9c38fc13c923983439c0e91d2db"
+    ]
+   }
+  },
+  {
+   "set": "1888",
+   "name": "createprofile.xex",
+   "need": "required",
+   "for": "Create Gamer Profile",
+   "size": 38912,
+   "sha1": [
+    "59ed0bc0b5a6750e67a23de5069177fe5825c21e"
+   ],
+   "original": {
+    "size": 40960,
+    "sha1": [
+     "2c7feae5e95081cf2b608aba31093a03b92b4066"
+    ]
+   },
+   "image": {
+    "size": 110592,
+    "sha1": [
+     "ded2ceccdef9f523b954135372c98d49ad03d619"
+    ]
+   }
+  },
+  {
+   "set": "1888",
+   "name": "gamerprofile.xex",
+   "need": "required",
+   "for": "Gamer Profile and gamer pictures",
+   "size": 77824,
+   "sha1": [
+    "22e1b4d94cdc8ad284b29f8f9e324bb6c38fa837"
+   ],
+   "original": {
+    "size": 77824,
+    "sha1": [
+     "0d34eb22987e556264f5857b018eb41e3b281754"
+    ]
+   },
+   "image": {
+    "size": 262144,
+    "sha1": [
+     "0829a822d8d81ef102260cd6be0290c5981bbc93"
+    ]
+   }
+  },
+  {
+   "set": "1888",
+   "name": "vk.xex",
+   "need": "required",
+   "for": "The on-screen keyboard",
+   "size": 110592,
+   "sha1": [
+    "05cc6d7a488fc1426024f8d12fbeb4302d097d57"
+   ],
+   "original": {
+    "size": 114688,
+    "sha1": [
+     "adf560127b34438ac31f34d59ff01e071ee0491f"
+    ]
+   },
+   "image": {
+    "size": 241664,
+    "sha1": [
+     "1f92fd6812047f28819ea361f414e8f0143f037f"
+    ]
+   }
+  },
+  {
+   "set": "1888",
+   "name": "deviceselector.xex",
+   "need": "required",
+   "for": "Choosing a storage device",
+   "size": 18432,
+   "sha1": [
+    "aa87545ece744fba07cca2a7f1918e50b66d33f3"
+   ],
+   "original": {
+    "size": 20480,
+    "sha1": [
+     "b754d0423b35b973ddf05d2b9a5552617b0631e4"
+    ]
+   },
+   "image": {
+    "size": 40960,
+    "sha1": [
+     "821f81e456b4e8ded32d96dfecfed88257d82b25"
+    ]
+   }
+  },
+  {
+   "set": "1888",
+   "name": "xenonclatin.xtt",
+   "need": "recommended",
+   "for": "The 2005 dashboard's font (else the console's own)",
+   "size": 1159168,
+   "sha1": [
+    "4b639a429853e4e85357b1c7bc93ca48b5e4e221"
+   ]
+  },
+  {
+   "set": "1888",
+   "name": "minimediaplayer.xex",
+   "need": "recommended",
+   "for": "The music player's screens",
+   "size": 36864,
+   "sha1": [
+    "5db4e7e5fc149edabb6c44abe451c4d361b5812d"
+   ],
+   "original": {
+    "size": 36864,
+    "sha1": [
+     "29ad18dc860c949081ff30cdebcea286399ae82a"
+    ]
+   },
+   "image": {
+    "size": 114688,
+    "sha1": [
+     "215fad72a0c79a900ac3d8ef3d561ba7dcd68e9e"
+    ]
+   }
+  },
+  {
+   "set": "1888",
+   "name": "friends.xex",
+   "need": "recommended",
+   "for": "Friends",
+   "size": 108544,
+   "sha1": [
+    "c666c841197683e002f666771e5d931743d2e941"
+   ],
+   "original": {
+    "size": 110592,
+    "sha1": [
+     "d500cdd850436e4174867e128904fb9cee5e69be"
+    ]
+   },
+   "image": {
+    "size": 311296,
+    "sha1": [
+     "17a086384aa1d51a552629bf36f84aca361a542c"
+    ]
+   }
+  },
+  {
+   "set": "1888",
+   "name": "voicemail.xex",
+   "need": "recommended",
+   "for": "Voice messages",
+   "size": 83968,
+   "sha1": [
+    "6c2b2f2e5a520988aa752ab49934fe2612f0c1dc"
+   ],
+   "original": {
+    "size": 86016,
+    "sha1": [
+     "8cec1a43de3e7ee50721552f74bd6d2594591042"
+    ]
+   },
+   "image": {
+    "size": 147456,
+    "sha1": [
+     "e9671350361290faf676fd8f0dfea9b5ea0cfc33"
+    ]
+   }
+  },
+  {
+   "set": "1888",
+   "name": "quickchat.xex",
+   "need": "recommended",
+   "for": "Quick chat",
+   "size": 28672,
+   "sha1": [
+    "7fe162f0d14e00c1ed05a19a7603ecb8b59cc62a"
+   ],
+   "original": {
+    "size": 28672,
+    "sha1": [
+     "49db896a53e80f537a2f0bcfbe60501a30d4fbbb"
+    ]
+   },
+   "image": {
+    "size": 65536,
+    "sha1": [
+     "82d9c9b1c988d5e5c342d1be5574eeb21738119a"
+    ]
+   }
+  },
+  {
+   "set": "1888",
+   "name": "feedback.xex",
+   "need": "recommended",
+   "for": "Player feedback",
+   "size": 69632,
+   "sha1": [
+    "43400b385b627608d88e77e4ac8622c22f67f364"
+   ],
+   "original": {
+    "size": 69632,
+    "sha1": [
+     "1c307a3baa750570f881d76112d0604ef92f48cd"
+    ]
+   },
+   "image": {
+    "size": 245760,
+    "sha1": [
+     "ef991e02f2285fbac5b7c1841724f8c5f3620ede"
+    ]
+   }
+  },
+  {
+   "set": "1888",
+   "name": "marketplace.xex",
+   "need": "recommended",
+   "for": "Marketplace screens",
+   "size": 143360,
+   "sha1": [
+    "9da82ef8b397f07540a2d9c755922120c599d711"
+   ],
+   "original": {
+    "size": 143360,
+    "sha1": [
+     "f9d23e2deab5a13cba1aceaec1d10adf2049f7b4"
+    ]
+   },
+   "image": {
+    "size": 598016,
+    "sha1": [
+     "17ef0b457febe6c6c3b072b1c58377c9614e82d9"
+    ]
+   }
+  },
+  {
+   "set": "1888",
+   "name": "updater.xex",
+   "need": "recommended",
+   "for": "System update screens",
+   "size": 20480,
+   "sha1": [
+    "7d49ab31ae86af8d575fa40f056d9729ce490911"
+   ],
+   "original": {
+    "size": 20480,
+    "sha1": [
+     "bb16905987a5856b561fd31fb5ff5d3c89e9cba3"
+    ]
+   },
+   "image": {
+    "size": 45056,
+    "sha1": [
+     "e374df5ece23cda374468f9f3b58acd94afdc83d"
+    ]
+   }
+  },
+  {
+   "set": "6717",
+   "name": "dash.xex",
+   "need": "required",
+   "for": "The Marketplace blade (2.0.6717's dashboard)",
+   "size": 4374528,
+   "sha1": [
+    "75a0bc115396db7aa719ad35dd1d8c3cfe48b88a"
+   ],
+   "image": {
+    "size": 14942208,
+    "sha1": [
+     "5c9345a4e368dea1e8c81a815af1d095401c7dc8"
+    ]
+   }
+  }
+ ]
+}

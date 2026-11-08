@@ -1,0 +1,2 @@
+# Shell scripts keep LF on every checkout: Git Bash fails on CRLF.
+*.sh text eol=lf

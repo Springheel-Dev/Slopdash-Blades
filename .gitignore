@@ -1,0 +1,12 @@
+build/
+plugin/build/
+*.xdb
+__pycache__/
+*.pyc
+
+# Local only, never committed: reference files (Microsoft's dashboard files and
+# tools), recordings pulled off the console, and the importer's test set.
+Assets/
+recordings/
+ImporterAssets/
+local/
